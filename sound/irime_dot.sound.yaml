@@ -1,7 +1,0 @@
-sound: 
-  - click.wav        # sound 0
-
-folder: irime_dot
-keyset: 
-  - {min: KEYCODE_UNKNOWN  , max: KEYCODE_PROFILE_SWITCH  , inOrder: false, sounds: [0] }  #兜底全部按键
-
