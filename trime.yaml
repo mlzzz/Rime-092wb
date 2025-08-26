@@ -1,0 +1,3519 @@
+config_version: "3.0"
+name: 092wb          #方案名称
+author: 往风        #作者信息
+
+#键盘高度等
+height:
+  1: &jpgd1 48.6 #符号键盘
+  2: &jpgd2 48.6 #主键盘
+  3: &jpgd3 48.6 #数字键盘
+  4: &jpgd4 12 #主键盘圆角
+  5: &jpgd5 36 #候选区高度
+  6: &jpgd6 0.5 #符号键盘行间距
+  7: &jpgd7 0.5 #符号键盘水平间距
+  8: &jpgd8 0.0 #符号键盘圆角
+  9: &jpgd9 3 #主键盘数字键盘行间距
+  10: &jpgd10 3 #主键盘数字键盘水平间距
+
+style:
+  auto_caps: false #自動句首大寫:true|false|ascii
+  background_dim_amount: 0.5
+  candidate_font: han.ttf  #候选字体
+  candidate_padding: 5  #候选项内边距
+  candidate_spacing: 0.5  #候选间距
+  candidate_text_size: 20  #候选字号
+  candidate_use_cursor: true #高亮候选项
+  candidate_view_height: 35 #候选区高度
+  color_scheme: default #配色方案
+  comment_font: 092etymon.otf #编码提示字体
+  comment_height: 14 #编码提示区高度
+  comment_on_top: true #编码提示在上方或右侧
+  comment_text_size: 12 #编码提示字号
+  hanb_font: hanb.ttf #扩充字体
+  horizontal: true #水平模式
+  key_font: symbol.ttf #键盘字体
+  key_long_text_size: 16 #长标签字号
+  key_text_size: 24 #键字号
+  key_width: 10.0 #键宽，占屏幕宽的百分比
+  label_text_size: 22 #标签字号
+  label_font: label.ttf #编标签字体
+  latin_font: latin.ttf #西文本体
+  latin_locale: en_US #西文语言
+  locale: zh_CN #缺省语言 zh_TW,zh_CN,zh_HK,""
+  keyboard_height: 330 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  preview_font: latin.ttf #按键提示字体
+  preview_height: 56 #按键提示高度
+  preview_offset: -32 #按键提示纵向偏移
+  preview_text_size: 40 #按键提示字号
+  proximity_correction: true #按键纠错
+  reset_ascii_mode: true #显示键盘时重置为中文状态
+  shadow_radius: 0.0 #按键阴影半径
+  speech_opencc_config: none #语音输入简繁转换
+  symbol_font: symbol.ttf #符号字体
+  symbol_text_size: 10 #符号字号
+  text_font: latin.ttf #编码字体
+  # text_height: 32 # 编码区高度（新版已取消该参数）
+  # text_size: 20 #编码区字号 （注释后不显示编码区）
+  vertical_correction: -5
+  key_height: *jpgd2 #键高
+  # 引用的键盘
+  keyboards: [default, number, symbols, .symbols, english, english2, .number, symbols01, symbols02, symbols11, symbols12, symbols13, symbols14, symbols21, symbols22, symbols31, symbols32, symbols33, symbols34, symbols35, symbols36, symbols41, symbols42, symbols43, symbols44, symbols51, symbols52, symbols53, symbols54, symbols55, symbols56, symbols61, symbols62, symbols63, symbols64, symbols65, symbols71, symbols72, symbols73, symbols74, symbols75, symbols81, symbols82, symbols83, symbols91, symbols92, symbols93, symbolsA1, symbolsA2, symbolsA3, symbolsA4, symbolsA5, symbolsB1, symbolsB2, symbolsB3, symbolsC1, symbolsC2, symbolsC3, symbolsC4, symbolsC5, symbolsD1, symbolsD2] #键盘配置,所有跳转键盘都需要在这里配置，不然会出错
+
+fallback_colors:
+  candidate_text_color: text_color
+  comment_text_color: candidate_text_color
+  border_color: back_color
+  candidate_separator_color: border_color
+  hilited_text_color: text_color
+  hilited_back_color: back_color
+  hilited_candidate_text_color: hilited_text_color
+  hilited_candidate_back_color: hilited_back_color
+  hilited_comment_text_color: comment_text_color
+  hilited_key_back_color: hilited_candidate_back_color
+  hilited_key_text_color: hilited_candidate_text_color
+  hilited_key_symbol_color: hilited_comment_text_color
+  hilited_off_key_back_color: hilited_key_back_color
+  hilited_on_key_back_color: hilited_key_back_color
+  hilited_off_key_text_color: hilited_key_text_color
+  hilited_on_key_text_color: hilited_key_text_color
+  key_back_color: back_color
+  key_border_color: border_color
+  key_text_color: candidate_text_color
+  key_symbol_color: comment_text_color
+  label_color: candidate_text_color
+  off_key_back_color: key_back_color
+  off_key_text_color: key_text_color
+  on_key_back_color: hilited_key_back_color
+  on_key_text_color: hilited_key_text_color
+  preview_back_color: key_text_color
+  preview_text_color: key_back_color
+  shadow_color: border_color
+  root_background: back_color # 整个键盘区+候选栏的背景图/色
+  candidate_background: back_color #候选栏的整体背景图/色
+  keyboard_back_color: border_color #键盘去的背景图/色
+  liquid_keyboard_background: keyboard_back_color # liquidKeyboard的背景图/色
+  text_back_color: back_color #编码区背景，即悬浮窗背景
+  long_text_back_color: key_back_color #长文本按键的背景(剪贴板）
+
+#颜色
+colors:
+  1: &color1 0xff000000 
+  2: &color2 0xffffffff 
+  3: &color3 0xffe1e3e7 
+  4: &color4 0xffacb2c2 
+  5: &color5 0xff131313 
+  6: &color6 0xff3266a0 
+  7: &color7 0xff121212 # 鍵盤背景
+  8: &color8 0xff202020 # 功能键颜色
+  
+#配色方案
+preset_color_schemes:
+  default:
+    name: 深色／default #方案名稱
+    author: wangfeng #作者資訊
+    back_color: 0xff121212 #候選區背景
+    border_color: 0xffc1c7ca #邊框
+    candidate_separator_color: 0xff121212 #候選分割背景
+    candidate_text_color: 0xffffffff #候選文字
+    comment_text_color: 0xff7b868c #提示
+    hilited_back_color: 0xccd3d7da #標明編碼背景
+    hilited_candidate_back_color: 0xff121212 #標明候選背景
+    hilited_candidate_text_color: 0xffffffff #標明候選文字
+    hilited_comment_text_color: 0xff7b868c #標明提示
+    hilited_key_back_color: 0xffd3d7da #標明按鍵背景
+    hilited_key_symbol_color: 0xff000000 #標明按鍵符號
+    hilited_key_text_color: 0xff000000 #標明按鍵文字
+    hilited_off_key_back_color: 0xffd3d7da #標明按鍵關閉狀態背景
+    hilited_off_key_text_color: 0xff000000 #標明按鍵關閉狀態文字
+    hilited_on_key_back_color: 0xffd3d7da #標明按鍵打開狀態背景
+    hilited_on_key_text_color: 0xff000000 #標明按鍵打開狀態文字
+    hilited_text_color: 0xff23948e #標明編碼
+    key_back_color: 0xff404040 #按鍵背景
+    key_border_color: 0xffeceff1 #按鍵邊框
+    key_symbol_color: 0xff5f6b73 #按鍵符號
+    key_text_color: 0xffffffff #按鍵文字
+    keyboard_back_color: 0xff121212 #鍵盤背景
+    label_color: 0xff000000 #標籤
+    off_key_back_color: 0xffd3d7da #按鍵關閉狀態背景
+    off_key_text_color: 0xff000000 #按鍵關閉狀態文字
+    on_key_back_color: 0xff23948e #按鍵打開狀態背景
+    on_key_text_color: 0xff37474f #按鍵打開狀態文字
+    preview_back_color: 0x55bfbfbf #按鍵提示背景
+    preview_text_color: 0xff23948e #按鍵提示文字
+    shadow_color: 0xff000000 #陰影
+    text_color: 0xff5a676e #編碼
+    text_back_color: 0xcce4e7e9 #編碼區背景
+    # 局部指定颜色
+    bc: *color7 # 第6行颜色和背景一样
+    gnj: *color8 # 功能键颜色
+    gnz: *color2 # 功能字颜色
+    sound: irime_dot
+
+android_keys:
+  name: [VoidSymbol, SOFT_LEFT, SOFT_RIGHT, HOME, BACK, CALL, ENDCALL,
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    asterisk, numbersign, Up, Down, Left, Right, KP_Begin,
+    VOLUME_UP, VOLUME_DOWN, POWER, CAMERA, Clear,
+    a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+    comma, period, Alt_L, Alt_R, Shift_L, Shift_R, Tab, space,
+    SYM, EXPLORER, ENVELOPE, Return, BackSpace,
+    grave, minus, equal, bracketleft, bracketright, backslash, semicolon, apostrophe, slash, at,
+    NUM, HEADSETHOOK, FOCUS, plus, Menu, NOTIFICATION, Find,
+    MEDIA_PLAY_PAUSE, MEDIA_STOP, MEDIA_NEXT, MEDIA_PREVIOUS, MEDIA_REWIND, MEDIA_FAST_FORWARD, MUTE,
+    Page_Up, Page_Down, PICTSYMBOLS, Mode_switch,
+    BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z,
+    BUTTON_L1, BUTTON_R1, BUTTON_L2, BUTTON_R2,
+    BUTTON_THUMBL, BUTTON_THUMBR, BUTTON_START, BUTTON_SELECT, BUTTON_MODE,
+    Escape, Delete, Control_L, Control_R, Caps_Lock, Scroll_Lock, Meta_L, Meta_R,
+    function, Sys_Req, Pause, Home, End, Insert, Next,
+    MEDIA_PLAY, MEDIA_PAUSE, MEDIA_CLOSE, MEDIA_EJECT, MEDIA_RECORD,
+    F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+    Num_Lock, KP_0, KP_1, KP_2, KP_3, KP_4, KP_5, KP_6, KP_7, KP_8, KP_9,
+    KP_Divide, KP_Multiply, KP_Subtract, KP_Add, KP_Decimal, KP_Separator, KP_Enter, KP_Equal,
+    parenleft, parenright,
+    VOLUME_MUTE, INFO, CHANNEL_UP, CHANNEL_DOWN, ZOOM_IN, ZOOM_OUT,
+    TV, WINDOW, GUIDE, DVR, BOOKMARK, CAPTIONS, SETTINGS,
+    TV_POWER, TV_INPUT, STB_POWER, STB_INPUT, AVR_POWER, AVR_INPUT,
+    PROG_RED, PROG_GREEN, PROG_YELLOW, PROG_BLUE, APP_SWITCH,
+    BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, BUTTON_7, BUTTON_8,
+    BUTTON_9, BUTTON_10, BUTTON_11, BUTTON_12, BUTTON_13, BUTTON_14, BUTTON_15, BUTTON_16,
+    LANGUAGE_SWITCH, MANNER_MODE, 3D_MODE, CONTACTS, CALENDAR, MUSIC, CALCULATOR,
+    Zenkaku_Hankaku, Eisu_toggle, Muhenkan, Henkan, Hiragana_Katakana, yen, RO, Kana_Lock,
+    ASSIST, BRIGHTNESS_DOWN, BRIGHTNESS_UP, MEDIA_AUDIO_TRACK,
+    SLEEP, WAKEUP, PAIRING, MEDIA_TOP_MENU, '11', '12', LAST_CHANNEL, TV_DATA_SERVICE, VOICE_ASSIST,
+    TV_RADIO_SERVICE, TV_TELETEXT, TV_NUMBER_ENTRY, TV_TERRESTRIAL_ANALOG, TV_TERRESTRIAL_DIGITAL,
+    TV_SATELLITE, TV_SATELLITE_BS, TV_SATELLITE_CS, TV_SATELLITE_SERVICE, TV_NETWORK, TV_ANTENNA_CABLE,
+    TV_INPUT_HDMI_1, TV_INPUT_HDMI_2, TV_INPUT_HDMI_3, TV_INPUT_HDMI_4,
+    TV_INPUT_COMPOSITE_1, TV_INPUT_COMPOSITE_2, TV_INPUT_COMPONENT_1, TV_INPUT_COMPONENT_2, TV_INPUT_VGA_1,
+    TV_AUDIO_DESCRIPTION, TV_AUDIO_DESCRIPTION_MIX_UP, TV_AUDIO_DESCRIPTION_MIX_DOWN,
+    TV_ZOOM_MODE, TV_CONTENTS_MENU, TV_MEDIA_CONTEXT_MENU, TV_TIMER_PROGRAMMING,
+    Help, NAVIGATE_PREVIOUS, NAVIGATE_NEXT, NAVIGATE_IN, NAVIGATE_OUT,
+    STEM_PRIMARY, STEM_1, STEM_2, STEM_3,
+    Pointer_UpLeft, Pointer_DownLeft, Pointer_UpRight, Pointer_DownRight,
+    MEDIA_SKIP_FORWARD, MEDIA_SKIP_BACKWARD, MEDIA_STEP_FORWARD, MEDIA_STEP_BACKWARD,
+    SOFT_SLEEP, CUT, COPY, PASTE,
+    SYSTEM_NAVIGATION_UP, SYSTEM_NAVIGATION_DOWN, SYSTEM_NAVIGATION_LEFT, SYSTEM_NAVIGATION_RIGHT,
+    A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+    exclam, quotedbl, dollar, percent, ampersand, colon, less, greater, question, asciicircum, underscore, braceleft, bar, braceright, asciitilde]
+  symbols: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!"$%&:<>?^_{|}~'
+  when:
+    ascii: 西文標籤
+    paging: 翻頁標籤
+    has_menu: 選單標籤
+    composing: 輸入狀態標籤
+    #always: 始終
+    #hover: 滑過
+    combo: 並擊
+    click: 單按
+    long_click: 長按
+    #double_click: 雙按
+    swipe_left: 左滑
+    swipe_right: 右滑
+    swipe_up: 上滑
+    swipe_down: 下滑
+  property:
+    width: 寬度
+    height: 高度
+    gap: 間隔
+    preview: 預覽
+    hint: 提示
+    label: 標籤
+    text: 文字
+    states: 狀態標籤
+    repeatable: 連續按鍵
+    functional: 功能鍵
+    shift_lock: Shift鎖定 #ascii_long: 英文長按中文單按鎖定, long: 長按鎖定, click: 單按鎖定
+    description: 辅助功能说明
+  action:
+    command: 命令
+    option: 參數
+    select: 選擇
+    toggle: 狀態
+    send: 按鍵
+    commit: 上屏
+
+preset_keyboards:
+  default:
+    # 注意还有一个英文键盘跟这个键盘布局相同
+    name: "全键"
+    width: 8.34 # 键盘未指定键宽时默认值
+    ascii_mode: 0
+    author: "往风"
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    keys: 
+      # 第一行
+      - {click: '1', label: "1", long_click: "！"}
+      - {click: '2', label: "2", long_click: "@"}
+      - {click: '3', label: "3", long_click: "#"}
+      - {click: '4', label: "4", long_click: "￥"}
+      - {click: '5', label: "5", long_click: "%"}
+      - {click: '6', label: "6", long_click: "……"}
+      - {click: '7', label: "7", long_click: "&"}
+      - {click: '8', label: "8", long_click: "*"}
+      - {click: '9', label: "9", long_click: "（"}
+      - {click: '0', label: "0", long_click: "）"}  
+      - {click: '-', label: "-", long_click: "——"}  
+      - {click: '=', label: "=", long_click: "+"}  
+
+      # 第二行
+      - {click: q, label: "Q"}
+      - {click: w, label: "W"}
+      - {click: e, label: "E"}
+      - {click: r, label: "R"}
+      - {click: t, label: "T"}
+      - {click: y, label: "Y"}
+      - {click: u, label: "U", long_click: "chaoji"}
+      - {click: i, label: "I"}
+      - {click: o, label: "O"}
+      - {click: p, label: "P"}
+      - {click: "[", long_click: "{"}
+      - {click: "]", long_click: "}"}
+      # 第三行
+      - {width: 4.4}
+      - {click: a, label: "A", long_click: "select_all"}
+      - {click: s, label: "S"}
+      - {click: d, label: "D"}
+      - {click: f, label: "F", long_click: "fanjian"}
+      - {click: g, label: "G"}
+      - {click: h, label: "H", long_click: "chaifen"}
+      - {click: j, label: "J", long_click: "zhujie"}
+      - {click: k, label: "K"}
+      - {click: l, label: "L"}
+      - {click: ";", long_click: "："}  
+      - {click: "'", long_click: "“”"}  
+      - {width: 4.4}
+      # 第四行
+      - {click: english2, width: 10, key_back_color: gnj, key_text_color: gnz}
+      - {click: z, label: "Z"}
+      - {click: x, label: "X", long_click: "cut"}
+      - {click: c, label: "C", long_click: "copy"}
+      - {click: v, label: "V", long_click: "paste"}
+      - {click: b, label: "B"}
+      - {click: n, label: "N"}
+      - {click: m, label: "M", long_click: "emoji"}
+      - {click: ",", long_click: "《"}
+      - {click: ".", long_click: "》"}
+      - {click: "/", long_click: "？"}
+      # 第五行
+      - {click: K_symbols123, width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: Shift, label: "↑", swipe_up: "！", width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: space, width: 40}
+      - {click: "BackSpace", label: "⌫", swipe_up: "ClearH", width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: Return, width: 15, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  english2:
+    name: "英文键盘2"
+    ascii_mode: 1
+    author: "往风"
+    width: 8.34 # 键盘未指定键宽时默认值
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    keys: 
+      # 第一行
+      - {click: '1', label: "1", long_click: "!"}
+      - {click: '2', label: "2", long_click: "@"}
+      - {click: '3', label: "3", long_click: "#"}
+      - {click: '4', label: "4", long_click: "$"}
+      - {click: '5', label: "5", long_click: "%"}
+      - {click: '6', label: "6", long_click: "^"}
+      - {click: '7', label: "7", long_click: "&"}
+      - {click: '8', label: "8", long_click: "*"}
+      - {click: '9', label: "9", long_click: "("}
+      - {click: '0', label: "0", long_click: ")"}  
+      - {click: '-', label: "-", long_click: "_"}  
+      - {click: '=', label: "=", long_click: "+"}  
+
+      # 第二行
+      - {click: q, swipe_up: 1}
+      - {click: w, swipe_up: 2}
+      - {click: e, swipe_up: 3}
+      - {click: r, swipe_up: 4}
+      - {click: t, swipe_up: 5}
+      - {click: y, swipe_up: 6}
+      - {click: u, swipe_up: 7}
+      - {click: i, swipe_up: 8}
+      - {click: o, swipe_up: 9}
+      - {click: p, swipe_up: 0}
+      - {click: "[", long_click: "{"}
+      - {click: "]", long_click: "}"}
+      # 第三行
+      - {width: 4.4}
+      - {click: a, long_click: "select_all"}
+      - {click: s}
+      - {click: d}
+      - {click: f}
+      - {click: g}
+      - {click: h}
+      - {click: j}
+      - {click: k}
+      - {click: l}
+      - {click: ";", long_click: ":"}  
+      - {click: "'", long_click: '"'}  
+      - {width: 4.4}
+      # 第四行
+      - {click: DefaultKeyboard2, width: 10, key_back_color: gnj, key_text_color: gnz}
+      - {click: z}
+      - {click: x, long_click: "cut"}
+      - {click: c, long_click: "copy"}
+      - {click: v, long_click: "paste"}
+      - {click: b}
+      - {click: n}
+      - {click: m}
+      - {click: ",", long_click: "<"}
+      - {click: ".", long_click: ">"}
+      - {click: "/", long_click: "?"}
+      # 第五行
+      - {click: K_symbols123, width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: Shift, label: "↑", swipe_up: "！", width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: space, width: 40}
+      - {click: "BackSpace", label: "⌫", swipe_up: "ClearH", width: 15, key_back_color: gnj, key_text_color: gnz}
+      - {click: Return, width: 15, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+
+  english:
+    name: "英文键盘"
+    ascii_mode: 1
+    author: "往风"
+    height: *jpgd2
+    width: 10 # 键盘未指定键宽时默认值
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    keys: 
+      - {click: q, swipe_up: "1",  swipe_down: "一"}
+      - {click: w, swipe_up: "2",  swipe_down: "二"}
+      - {click: e, swipe_up: "3",  swipe_down: "三"}
+      - {click: r, swipe_up: "4",  swipe_down: "四"}
+      - {click: t, swipe_up: "5",  swipe_down: "五"}
+      - {click: y, swipe_up: "6",  swipe_down: "六"}
+      - {click: u, swipe_up: "7",  swipe_down: "七"}
+      - {click: i, swipe_up: "8",  swipe_down: "八"}
+      - {click: o, swipe_up: "9",  swipe_down: "九"}
+      - {click: p, swipe_up: "0",  swipe_down: "〇"}
+      - {width: 5}
+      - {click: a, swipe_up: "～", swipe_down: "~"}
+      - {click: s, swipe_up: "／", swipe_down: "/"}
+      - {click: d, swipe_up: "：", swipe_down: ":"}
+      - {click: f, swipe_up: "；", swipe_down: ";"}
+      - {click: g, swipe_up: "（", swipe_down: "("}
+      - {click: h, swipe_up: "）", swipe_down: ")"}
+      - {click: j, swipe_up: "@",  swipe_down: "@"}
+      - {click: k, swipe_up: "“",  swipe_down: '"'}
+      - {click: l, swipe_up: "”",  swipe_down: "'"}
+      - {width: 5}
+      - {click: Shift, width: 14}
+      - {width: 1}
+      - {click: z, swipe_up: "-",  swipe_down: "-"}
+      - {click: x, swipe_up: "_",  swipe_down: "_"}
+      - {click: c, swipe_up: "#",  swipe_down: "#"}
+      - {click: v, swipe_up: "？",  swipe_down: "?"}
+      - {click: b, swipe_up: "！",  swipe_down: "!"}
+      - {click: n, swipe_up: "，",  swipe_down: ","}
+      - {click: m, swipe_up: "。",  swipe_down: "."}
+      - {width: 1}
+      - {click: BackSpace, width: 14}
+      - {click: symbols, width: 14}
+      - {click: .number, width: 12}
+      - {click: space, width: 42}
+      - {click: DefaultKeyboard2, width: 12}
+      - {click: Return, width: 20}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  number:
+    name: "苹果数字键盘"
+    ascii_mode: 0
+    author: "往风"
+    width: 10 # 键盘未指定键宽时默认值
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    keys: 
+      - {click: 1}
+      - {click: 2}
+      - {click: 3}
+      - {click: 4}
+      - {click: 5}
+      - {click: 6}
+      - {click: 7}
+      - {click: 8}
+      - {click: 9}
+      - {click: 0}
+      - {click: "-"}
+      - {click: "/"}
+      - {click: ":"}
+      - {click: ";"}
+      - {click: "("}
+      - {click: ")"}
+      - {click: "¥"}
+      - {click: "@"}
+      - {click: "〝"}
+      - {click: "〞"}
+      - {click: .symbols, width: 14}
+      - {width: 3}
+      - {click: 。, width: 11}
+      - {click: ，, width: 11}
+      - {click: 、, width: 11}
+      - {click: "?", width: 11}
+      - {click: "!", width: 11}
+      - {click: ., width: 11}
+      - {width: 3}
+      - {click: BackSpace, width: 14}
+      - {click: DefaultKeyboard, width: 25}
+      - {click: space, width: 50}
+      - {click: Return, width: 25}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols:
+    name: "苹果符号键盘"
+    ascii_mode: 0
+    author: "往风"
+    width: 10 # 键盘未指定键宽时默认值
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    keys: 
+      - {click: 【}
+      - {click: 】}
+      - {click: "{"}
+      - {click: "}"}
+      - {click: "#"}
+      - {click: "%"}
+      - {click: "^"}
+      - {click: "*"}
+      - {click: "+"}
+      - {click: "="}
+      - {click: "_"}
+      - {click: "-"}
+      - {click: "\\"}
+      - {click: "|"}
+      - {click: "~"}
+      - {click: "《"}
+      - {click: "》"}
+      - {click: "$"}
+      - {click: "&"}
+      - {click: "·"}
+      - {click: number, width: 14}
+      - {width: 3}
+      - {click: "…", width: 11}
+      - {click: "，", width: 11}
+      - {click: "^_^", width: 11}
+      - {click: "?", width: 11}
+      - {click: "!", width: 11}
+      - {click: "´", width: 11}
+      - {width: 3}
+      - {click: BackSpace, width: 14}
+      - {click: DefaultKeyboard, width: 25}
+      - {click: space, width: 50}
+      - {click: Return, width: 25}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+# 符号键盘
+  symbols01:
+    name: "数字1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "+"}
+      - {click: 1}
+      - {click: 2}
+      - {click: 3}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "-"}
+      - {click: 4}
+      - {click: 5}
+      - {click: 6}
+      - {click: K_symbols02x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "*"}
+      - {click: 7}
+      - {click: 8}
+      - {click: 9}
+      - {click: Return1, key_back_color: gnj, key_text_color: gnz}
+      - {click: "/"}
+      - {click: "="}
+      - {click: 0}
+      - {click: .}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols02:
+    name: "功能2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbols01, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: Return1, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0g, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols11:
+    name: "英文1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: ","}
+      - {click: "."}
+      - {click: "?"}
+      - {click: "!"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: ":"}
+      - {click: "/"}
+      - {click: "^"}
+      - {click: "*"}
+      - {click: K_symbols11, key_back_color: gnj, key_text_color: gnz}
+      - {click: ";"}
+      - {click: '"'}
+      - {click: "'"}
+      - {click: "#"}
+      - {click: K_symbols12x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "{"}
+      - {click: "}"}
+      - {click: "_"}
+      - {click: "@"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols12:
+    name: "英文2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "("}
+      - {click: ")"}
+      - {click: "["}
+      - {click: "]"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {ascii: "\\", click: "、"}
+      - {click: '`'}
+      - {click: '~'}
+      - {click: "$"}
+      - {click: K_symbols11, key_back_color: gnj, key_text_color: gnz}
+      - {click: "|"}
+      - {click: "+"}
+      - {click: "-"}
+      - {click: "="}
+      - {click: K_symbols13x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "<"}
+      - {click: ">"}
+      - {click: "..."}
+      - {click: "&"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols13:
+    name: "英文3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "Ⓐ"}
+      - {click: "Ⓑ"}
+      - {click: "Ⓒ"}
+      - {click: "Ⓓ"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⓔ"}
+      - {click: "Ⓕ"}
+      - {click: "Ⓖ"}
+      - {click: "Ⓗ"}
+      - {click: K_symbols12, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⓘ"}
+      - {click: "Ⓙ"}
+      - {click: "Ⓚ"}
+      - {click: "Ⓛ"}
+      - {click: K_symbols14x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⓜ"}
+      - {click: "Ⓝ"}
+      - {click: "Ⓞ"}
+      - {click: "Ⓟ"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols14:
+    name: "英文4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "Ⓠ"}
+      - {click: "Ⓡ"}
+      - {click: "Ⓢ"}
+      - {click: "Ⓣ"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⓤ"}
+      - {click: "Ⓥ"}
+      - {click: "Ⓦ"}
+      - {click: "Ⓧ"}
+      - {click: K_symbols13, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⓨ"}
+      - {click: "Ⓩ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbols14x, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols21:
+    name: "中文1"
+    ascii_mode: 0
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "，"}
+      - {click: "。"}
+      - {click: "？"}
+      - {click: "！"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "："}
+      - {click: "、"}
+      - {click: "@"}
+      - {click: "……"}
+      - {click: K_symbols21, key_back_color: gnj, key_text_color: gnz}
+      - {click: "“”"}
+      - {click: "；"}
+      - {click: "‘’"}
+      - {click: "——"}
+      - {click: K_symbols22x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "（）"}
+      - { click: "《》"}
+      - {click: "〈〉"}
+      - {click: "〔〕"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols22:
+    name: "中文2"
+    ascii_mode: 0
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "［］"}
+      - {click: "【】"}
+      - {click: "*"}
+      - {click: "&"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "+"}
+      - {click: "-"}
+      - {click: "×"}
+      - {click: "÷"}
+      - {click: K_symbols21, key_back_color: gnj, key_text_color: gnz}
+      - {click: "="}
+      - {click: "#"}
+      - {click: "￥"}
+      - {click: "%"}
+      - {click: K_symbols22x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ˇ"}
+      - {click: "·"}
+      - {click: "•"}
+      - {click: "～"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols31:
+    name: "颜文1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "^_^"}
+      - {click: "^ω^"}
+      - {click: "^o^"}
+      - {click: "*^_^*"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "↖(^ω^)↗"}
+      - {click: "(^o^)／"}
+      - {click: "(=^▽^=)"}
+      - {click: "=^_^="}
+      - {click: K_symbols31, key_back_color: gnj, key_text_color: gnz}
+      - {click: "(*^ω^*)"}
+      - {click: "٩(๑^o^๑)۶"}
+      - {click: "o(￣▽￣)o"}
+      - {click: "Y(^_^)Y"}
+      - {click: K_symbols32x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "٩( 'ω' )و"}
+      - {click: "╰(*´︶`*)╯"}
+      - {click: "*罒▽罒*"}
+      - {click: "ヾ ^_^♪"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols32:
+    name: "颜文2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "QwQ"}
+      - {click: "(●—●)"}
+      - {click: "(๑• . •๑)"}
+      - {click: "(๑•̀ㅂ•́)و✧"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "罒ω罒"}
+      - {click: "(｡ì _ í｡)"}
+      - {click: "(๑•ี_เ•ี๑)"}
+      - {click: "ㄟ(≧◇≦)ㄏ"}
+      - {click: K_symbols31, key_back_color: gnj, key_text_color: gnz}
+      - {click: "(*/ω＼*)"}
+      - {click: "٩(๑òωó๑)۶"}
+      - {click: "( σ'ω')σ"}
+      - {click: "♡＾▽＾♡"}
+      - {click: K_symbols33x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "(ง •̀_•́)ง"}
+      - {click: "(｡･ω･｡)ﾉ♡"}
+      - {click: "(๑°3°๑)"}
+      - {click: "_(•̀ω•́ 」∠)_"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols33:
+    name: "颜文3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "(＞﹏＜)"}
+      - {click: "T_T"}
+      - {click: "⊙︿⊙"}
+      - {click: "〒▽〒"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⊙﹏⊙"}
+      - {click: "π_π"}
+      - {click: "(｡•́︿•̀｡)"}
+      - {click: "(ToT)/~~~"}
+      - {click: K_symbols32, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╯﹏╰"}
+      - {click: "ಥ_ಥ"}
+      - {click: "(╥╯^╰╥)"}
+      - {click: "(〃′o`)"}
+      - {click: K_symbols34x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "( •̥́ ˍ •̀ू )"}
+      - {click: "(つд⊂)"}
+      - {click: "心塞(´-ωก`)"}
+      - {click: "(╥﹏╥)"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols34:
+    name: "颜文4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "(*￣︿￣)"}
+      - {click: ">o<"}
+      - {click: "(-`ェ´-怒)"}
+      - {click: "ヽ(‘⌒´メ)ノ"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "(*｀Ω´*)v"}
+      - {click: "(｡•ˇ‸ˇ•｡)"}
+      - {click: "(怒｀Д´怒)"}
+      - {click: "٩(๑`^´๑)۶"}
+      - {click: K_symbols33, key_back_color: gnj, key_text_color: gnz}
+      - {click: "<(｀^´)>"}
+      - {click: "（｀Δ´）！"}
+      - {click: "ψ(｀∇´)ψ"}
+      - {click: "(；′⌒`)"}
+      - {click: K_symbols35x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "（▼へ▼メ）"}
+      - {click: "☄ฺ(◣д◢)☄ฺ"}
+      - {click: "→_→"}
+      - {click: "(;｀O´)o"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols35:
+    name: "颜文5"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "⊙_⊙"}
+      - {click: "d(ŐдŐ๑)"}
+      - {click: "┑(￣Д ￣)┍"}
+      - {click: "╭(°A°`)╮"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⊙▽⊙"}
+      - {click: "(๑òᆺó๑)"}
+      - {click: "(#ﾟДﾟ)"}
+      - {click: "Σ⊙▃⊙川"}
+      - {click: K_symbols34, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⊙ω⊙"}
+      - {click: "(๑ŐдŐ)b"}
+      - {click: "┌(。Д。)┐"}
+      - {click: "(°ー°〃)"}
+      - {click: K_symbols36x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "(⊙x⊙;)"}
+      - {click: "!!!∑(°Д°ノ)ノ"}
+      - {click: "Σ(っ °Д °;)っ"}
+      - {click: "ヽ(*。>Д<)o゜"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols36:
+    name: "颜文6"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 20 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "=_="}
+      - {click: "╮(╯_╰)╭"}
+      - {click: "（︶︿︶）"}
+      - {click: "_(:з」∠)_"}
+      - {click: K_back, key_back_color: gnj, key_text_color: gnz}
+      - {click: "@_@"}
+      - {click: "╮(╯▽╰)╭"}
+      - {click: "(＠￣ー￣＠)"}
+      - {click: "_(:3」∠❀)_"}
+      - {click: K_symbols35, key_back_color: gnj, key_text_color: gnz}
+      - {click: "눈_눈"}
+      - {click: "╭(╯ε╰)╮"}
+      - {click: "(ー_ー)!!"}
+      - {click: "_(:D)∠)_"}
+      - {click: K_symbols36x, key_back_color: gnj, key_text_color: gnz}
+      - {click: "o_O"}
+      - {click: "╭(╯^╰)╮"}
+      - {click: "(；一_一)"}
+      - {click: "´_>`"}
+      - {click: BackSpace, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols41:
+    name: "Emoji1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "😃"}
+      - {click: "😄"}
+      - {click: "😅"}
+      - {click: "😀"}
+      - {click: "😁"}
+      - {click: "😂"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😆"}
+      - {click: "😉"}
+      - {click: "😊"}
+      - {click: "😋"}
+      - {click: "😎"}
+      - {click: "😍"}
+      - {click: K_symbols41, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😘"}
+      - {click: "😗"}
+      - {click: "😙"}
+      - {click: "😚"}
+      - {click: "☺"}
+      - {click: "🙂"}
+      - {click: K_symbols42x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "🤗"}
+      - {click: "😇"}
+      - {click: "🤓"}
+      - {click: "🤔"}
+      - {click: "😐"}
+      - {click: "😑"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols42:
+    name: "Emoji2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "😣"}
+      - {click: "😥"}
+      - {click: "😮"}
+      - {click: "😶"}
+      - {click: "🙄"}
+      - {click: "😏"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "🙃"}
+      - {click: "😯"}
+      - {click: "😪"}
+      - {click: "😫"}
+      - {click: "😴"}
+      - {click: "😌"}
+      - {click: K_symbols41, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😛"}
+      - {click: "😜"}
+      - {click: "😝"}
+      - {click: "😒"}
+      - {click: "😓"}
+      - {click: "😔"}
+      - {click: K_symbols43x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😕"}
+      - {click: "🤑"}
+      - {click: "😲"}
+      - {click: "😷"}
+      - {click: "🤒"}
+      - {click: "🤐"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols43:
+    name: "Emoji3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "☝"}
+      - {click: "🖖"}
+      - {click: "✌"}
+      - {click: "👌"}
+      - {click: "💅"}
+      - {click: "🙏"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "🖕"}
+      - {click: "👎"}
+      - {click: "✊"}
+      - {click: "🤘"}
+      - {click: "👏"}
+      - {click: "👍"}
+      - {click: K_symbols42, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "💋"}
+      - {click: "🎂"}
+      - {click: "🍻"}
+      - {click: "🍚"}
+      - {click: "🍷"}
+      - {click: "☕"}
+      - {click: K_symbols44x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "💔"}
+      - {click: "🌹"}
+      - {click: "💣"}
+      - {click: "💪"}
+      - {click: "💯"}
+      - {click: "💤"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols44:
+    name: "Emoji4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "🤕"}
+      - {click: "🙁"}
+      - {click: "😖"}
+      - {click: "😞"}
+      - {click: "😟"}
+      - {click: "😤"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😢"}
+      - {click: "😭"}
+      - {click: "😦"}
+      - {click: "😧"}
+      - {click: "😨"}
+      - {click: "😩"}
+      - {click: K_symbols43, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😬"}
+      - {click: "😰"}
+      - {click: "😱"}
+      - {click: "😳"}
+      - {click: "😵"}
+      - {click: "😡"}
+      - {click: K_symbols44x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "😠"}
+      - {click: "🌝"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols51:
+    name: "特殊1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "△"}
+      - {click: "▽"}
+      - {click: "○"}
+      - {click: "◇"}
+      - {click: "□"}
+      - {click: "☆"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "▲"}
+      - {click: "▼"}
+      - {click: "●"}
+      - {click: "◆"}
+      - {click: "■"}
+      - {click: "★"}
+      - {click: K_symbols51, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "▷"}
+      - {click: "◁"}
+      - {click: "▶"}
+      - {click: "◀"}
+      - {click: "√"}
+      - {click: "×"}
+      - {click: K_symbols52x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⌫"}
+      - {click: "✡"}
+      - {click: "☑"}
+      - {click: "☒"}
+      - {click: "✔"}
+      - {click: "✘"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols52:
+    name: "特殊2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "☼"}
+      - {click: "☽"}
+      - {click: "♀"}
+      - {click: "☻"}
+      - {click: "◐"}
+      - {click: "㏂"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "☀"}
+      - {click: "☾"}
+      - {click: "♂"}
+      - {click: "☹"}
+      - {click: "◑"}
+      - {click: "㏘"}
+      - {click: K_symbols51, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "☜"}
+      - {click: "☝"}
+      - {click: "☞"}
+      - {click: "☚"}
+      - {click: "☟"}
+      - {click: "☛"}
+      - {click: K_symbols53x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "▪"}
+      - {click: "•"}
+      - {click: "‥"}
+      - {click: "…"}
+      - {click: "∷"}
+      - {click: "※"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols53:
+    name: "特殊3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "♩"}
+      - {click: "♪"}
+      - {click: "♫"}
+      - {click: "♬"}
+      - {click: "§"}
+      - {click: "°"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "♭"}
+      - {click: "♯"}
+      - {click: "♮"}
+      - {click: "‖"}
+      - {click: "¶"}
+      - {click: "№"}
+      - {click: K_symbols52, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "◎"}
+      - {click: "¤"}
+      - {click: "۞"}
+      - {click: "℗"}
+      - {click: "®"}
+      - {click: "©"}
+      - {click: K_symbols54x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "卍"}
+      - {click: "卐"}
+      - {click: "℡"}
+      - {click: "™"}
+      - {click: "㏇"}
+      - {click: "Φ"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols54:
+    name: "特殊4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "↖"}
+      - {click: "↑"}
+      - {click: "↗"}
+      - {click: "◤"}
+      - {click: "㊤"}
+      - {click: "◥"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "←"}
+      - {click: "↔"}
+      - {click: "→"}
+      - {click: "㊧"}
+      - {click: "㊥"}
+      - {click: "㊨"}
+      - {click: K_symbols53, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "↙"}
+      - {click: "↓"}
+      - {click: "↘"}
+      - {click: "◣"}
+      - {click: "㊦"}
+      - {click: "◢"}
+      - {click: K_symbols55x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⇄"}
+      - {click: "⇅"}
+      - {click: "⇆"}
+      - {click: "⇤"}
+      - {click: "↩"}
+      - {click: "⇥"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols55:
+    name: "特殊5"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "❏"}
+      - {click: "❐"}
+      - {click: "◲"}
+      - {click: "〼"}
+      - {click: "▢"}
+      - {click: "▣"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⇦"}
+      - {click: "⇧"}
+      - {click: "⇨"}
+      - {click: "⇩"}
+      - {click: "⇪"}
+      - {click: "↶"}
+      - {click: K_symbols54, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "▸"}
+      - {click: "◂"}
+      - {click: "▴"}
+      - {click: "▾"}
+      - {click: "✁"}
+      - {click: "☏"}
+      - {click: K_symbols56x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "✍"}
+      - {click: "❅"}
+      - {click: "ϟ"}
+      - {click: "📝"}
+      - {click: "✎"}
+      - {click: "✆"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols56:
+    name: "特殊6"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "☴"}
+      - {click: "☲"}
+      - {click: "☷"}
+      - {click: "⚿"}
+      - {click: "⛮"}
+      - {click: "⚙"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "☳"}
+      - {click: "☯"}
+      - {click: "☱"}
+      - {click: "⛶"}
+      - {click: "☩"}
+      - {click: "☐"}
+      - {click: K_symbols55, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "☶"}
+      - {click: "☵"}
+      - {click: "☰"}
+      - {click: "💬"}
+      - {click: "🗨"}
+      - {click: "💭"}
+      - {click: K_symbols56x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ღ"}
+      - {click: "✈"}
+      - {click: "☂"}
+      - {click: "🎤"}
+      - {click: "🌐"}
+      - {click: "🔍"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols61:
+    name: "数学1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "﹢"}
+      - {click: "﹣"}
+      - {click: "·"}
+      - {click: "/"}
+      - {click: "="}
+      - {click: "≡"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "﹤"}
+      - {click: "﹥"}
+      - {click: "≦"}
+      - {click: "≧"}
+      - {click: "≮"}
+      - {click: "≯"}
+      - {click: K_symbols61, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "＋"}
+      - {click: "－"}
+      - {click: "×"}
+      - {click: "÷"}
+      - {click: "＝"}
+      - {click: "≠"}
+      - {click: K_symbols62x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "＜"}
+      - {click: "＞"}
+      - {click: "≤"}
+      - {click: "≥"}
+      - {click: "≈"}
+      - {click: "≒"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols62:
+    name: "数学2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "㎎"}
+      - {click: "㎏"}
+      - {click: "μm"}
+      - {click: "㎜"}
+      - {click: "㎝"}
+      - {click: "㎞"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "℃"}
+      - {click: "¥"}
+      - {click: "$"}
+      - {click: "€"}
+      - {click: "฿"}
+      - {click: "￡"}
+      - {click: K_symbols61, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㎡"}
+      - {click: "m³"}
+      - {click: "㏄"}
+      - {click: "ml"}
+      - {click: "mol"}
+      - {click: "㏕"}
+      - {click: K_symbols63x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "℉"}
+      - {click: "￥"}
+      - {click: "£"}
+      - {click: "￠"}
+      - {click: "₠"}
+      - {click: "〒"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols63:
+    name: "数学3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "∝"}
+      - {click: "∽"}
+      - {click: "∈"}
+      - {click: "∩"}
+      - {click: "∧"}
+      - {click: "⊙"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⌒"}
+      - {click: "∥"}
+      - {click: "∟"}
+      - {click: "∣"}
+      - {click: "∂"}
+      - {click: "∆"}
+      - {click: K_symbols62, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "∞"}
+      - {click: "≌"}
+      - {click: "∉"}
+      - {click: "∪"}
+      - {click: "∨"}
+      - {click: "⊕"}
+      - {click: K_symbols64x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⊿"}
+      - {click: "⊥"}
+      - {click: "∠"}
+      - {click: "∫"}
+      - {click: "∬"}
+      - {click: "∭"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols64:
+    name: "数学4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "¹"}
+      - {click: "²"}
+      - {click: "³"}
+      - {click: "⁴"}
+      - {click: "⁵"}
+      - {click: "ⁿ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⁶"}
+      - {click: "⁷"}
+      - {click: "⁸"}
+      - {click: "⁹"}
+      - {click: "⁰"}
+      - {click: "ˣ"}
+      - {click: K_symbols63, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⁺"}
+      - {click: "⁻"}
+      - {click: "⁼"}
+      - {click: "⁽"}
+      - {click: "⁾"}
+      - {click: "‰"}
+      - {click: K_symbols65x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "½"}
+      - {click: "⅓"}
+      - {click: "¼"}
+      - {click: "⅔"}
+      - {click: "¾"}
+      - {click: "％"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols65:
+    name: "数学5"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "₁"}
+      - {click: "₂"}
+      - {click: "₃"}
+      - {click: "₄"}
+      - {click: "₅"}
+      - {click: "ₙ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "₆"}
+      - {click: "₇"}
+      - {click: "₈"}
+      - {click: "₉"}
+      - {click: "₀"}
+      - {click: "ₓ"}
+      - {click: K_symbols64, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "₊"}
+      - {click: "₋"}
+      - {click: "₌"}
+      - {click: "₍"}
+      - {click: "₎"}
+      - {click: "℅"}
+      - {click: K_symbols65x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "°"}
+      - {click: "′"}
+      - {click: "″"}
+      - {click: "∮"}
+      - {click: "∯"}
+      - {click: "∰"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols00, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols10, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols20, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols30, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols40, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols50, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols60, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0y, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols71:
+    name: "序号1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 16 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "①"}
+      - {click: "②"}
+      - {click: "③"}
+      - {click: "④"}
+      - {click: "⑤"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⑥"}
+      - {click: "⑦"}
+      - {click: "⑧"}
+      - {click: "⑨"}
+      - {click: "⑩"}
+      - {click: K_symbols71, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⒈"}
+      - {click: "⒉"}
+      - {click: "⒊"}
+      - {click: "⒋"}
+      - {click: "⒌"}
+      - {click: K_symbols72x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⒍"}
+      - {click: "⒎"}
+      - {click: "⒏"}
+      - {click: "⒐"}
+      - {click: "⒑"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols72:
+    name: "序号2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 16 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "⒒"}
+      - {click: "⒓"}
+      - {click: "⒔"}
+      - {click: "⒕"}
+      - {click: "⒖"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⒗"}
+      - {click: "⒘"}
+      - {click: "⒙"}
+      - {click: "⒚"}
+      - {click: "⒛"}
+      - {click: K_symbols71, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⑴"}
+      - {click: "⑵"}
+      - {click: "⑶"}
+      - {click: "⑷"}
+      - {click: "⑸"}
+      - {click: K_symbols73x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⑹"}
+      - {click: "⑺"}
+      - {click: "⑻"}
+      - {click: "⑼"}
+      - {click: "⑽"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols73:
+    name: "序号3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 16 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "⑾"}
+      - {click: "⑿"}
+      - {click: "⒀"}
+      - {click: "⒁"}
+      - {click: "⒂"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "⒃"}
+      - {click: "⒄"}
+      - {click: "⒅"}
+      - {click: "⒆"}
+      - {click: "⒇"}
+      - {click: K_symbols72, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈠"}
+      - {click: "㈡"}
+      - {click: "㈢"}
+      - {click: "㈣"}
+      - {click: "㈤"}
+      - {click: K_symbols74x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈥"}
+      - {click: "㈦"}
+      - {click: "㈧"}
+      - {click: "㈨"}
+      - {click: "㈩"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols74:
+    name: "序号4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 16 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "➊"}
+      - {click: "➋"}
+      - {click: "➌"}
+      - {click: "➍"}
+      - {click: "➎"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "➏"}
+      - {click: "➐"}
+      - {click: "➑"}
+      - {click: "➒"}
+      - {click: "➓"}
+      - {click: K_symbols73, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㊀"}
+      - {click: "㊁"}
+      - {click: "㊂"}
+      - {click: "㊃"}
+      - {click: "㊄"}
+      - {click: K_symbols75x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㊅"}
+      - {click: "㊆"}
+      - {click: "㊇"}
+      - {click: "㊈"}
+      - {click: "㊉"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols75:
+    name: "序号5"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 16 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ⅰ"}
+      - {click: "ⅱ"}
+      - {click: "ⅲ"}
+      - {click: "ⅳ"}
+      - {click: "ⅴ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ⅵ"}
+      - {click: "ⅶ"}
+      - {click: "ⅷ"}
+      - {click: "ⅸ"}
+      - {click: "ⅹ"}
+      - {click: K_symbols74, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⅰ"}
+      - {click: "Ⅱ"}
+      - {click: "Ⅲ"}
+      - {click: "Ⅳ"}
+      - {click: "Ⅴ"}
+      - {click: K_symbols75x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ⅵ"}
+      - {click: "Ⅶ"}
+      - {click: "Ⅷ"}
+      - {click: "Ⅸ"}
+      - {click: "Ⅹ"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols81:
+    name: "制表1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "┌"}
+      - {click: "┬"}
+      - {click: "┐"}
+      - {click: "┏"}
+      - {click: "┳"}
+      - {click: "┓"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "├"}
+      - {click: "┼"}
+      - {click: "┤"}
+      - {click: "┣"}
+      - {click: "╋"}
+      - {click: "┫"}
+      - {click: K_symbols81, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "└"}
+      - {click: "┴"}
+      - {click: "┘"}
+      - {click: "┗"}
+      - {click: "┻"}
+      - {click: "┛"}
+      - {click: K_symbols82x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "┍"}
+      - {click: "┑"}
+      - {click: "┕"}
+      - {click: "┙"}
+      - {click: "┄"}
+      - {click: "┆"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols82:
+    name: "制表2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "╔"}
+      - {click: "╦"}
+      - {click: "╗"}
+      - {click: "╭"}
+      - {click: "─"}
+      - {click: "╮"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╠"}
+      - {click: "╬"}
+      - {click: "╣"}
+      - {click: "│"}
+      - {click: "╳"}
+      - {click: "┃"}
+      - {click: K_symbols81, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╚"}
+      - {click: "╩"}
+      - {click: "╝"}
+      - {click: "╰"}
+      - {click: "━"}
+      - {click: "╯"}
+      - {click: K_symbols83x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "┎"}
+      - {click: "┒"}
+      - {click: "┖"}
+      - {click: "┚"}
+      - {click: "┅"}
+      - {click: "┇"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols83:
+    name: "制表3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "╒"}
+      - {click: "╕"}
+      - {click: "╓"}
+      - {click: "╖"}
+      - {click: "╱"}
+      - {click: "╲"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╘"}
+      - {click: "╛"}
+      - {click: "╙"}
+      - {click: "╜"}
+      - {click: "╲"}
+      - {click: "╱"}
+      - {click: K_symbols82, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╞"}
+      - {click: "╡"}
+      - {click: "╥"}
+      - {click: "╨"}
+      - {click: "╪"}
+      - {click: "╫"}
+      - {click: K_symbols83x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "╟"}
+      - {click: "╢"}
+      - {click: "╤"}
+      - {click: "╧"}
+      - {click: "═"}
+      - {click: "║"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols91:
+    name: "注音1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ā"}
+      - {click: "á"}
+      - {click: "ǎ"}
+      - {click: "à"}
+      - {click: "ō"}
+      - {click: "ó"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ē"}
+      - {click: "é"}
+      - {click: "ě"}
+      - {click: "è"}
+      - {click: "ǒ"}
+      - {click: "ò"}
+      - {click: K_symbols91, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ī"}
+      - {click: "í"}
+      - {click: "ǐ"}
+      - {click: "ì"}
+      - {click: "ū"}
+      - {click: "ú"}
+      - {click: K_symbols92x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ǖ"}
+      - {click: "ǘ"}
+      - {click: "ǚ"}
+      - {click: "ǜ"}
+      - {click: "ǔ"}
+      - {click: "ù"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols92:
+    name: "注音2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ê"}
+      - {click: ""}
+      - {click: "ü"}
+      - {click: "ń"}
+      - {click: "ň"}
+      - {click: ""}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄚ"}
+      - {click: "ㄛ"}
+      - {click: "ㄜ"}
+      - {click: "ㄧ"}
+      - {click: "ㄨ"}
+      - {click: "ㄩ"}
+      - {click: K_symbols91, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄝ"}
+      - {click: "ㄞ"}
+      - {click: "ㄟ"}
+      - {click: "ㄠ"}
+      - {click: "ㄡ"}
+      - {click: "ㄢ"}
+      - {click: K_symbols93x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄣ"}
+      - {click: "ㄤ"}
+      - {click: "ㄥ"}
+      - {click: "ㄦ"}
+      - {click: "ㄅ"}
+      - {click: "ㄆ"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbols93:
+    name: "注音3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ㄇ"}
+      - {click: "ㄈ"}
+      - {click: "ㄉ"}
+      - {click: "ㄊ"}
+      - {click: "ㄋ"}
+      - {click: "ㄌ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄍ"}
+      - {click: "ㄎ"}
+      - {click: "ㄏ"}
+      - {click: "ㄐ"}
+      - {click: "ㄑ"}
+      - {click: "ㄒ"}
+      - {click: K_symbols92, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄓ"}
+      - {click: "ㄔ"}
+      - {click: "ㄕ"}
+      - {click: "ㄖ"}
+      - {click: "ㄗ"}
+      - {click: "ㄘ"}
+      - {click: K_symbols93x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㄙ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsA1:
+    name: "希腊1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "Α"}
+      - {click: "Β"}
+      - {click: "Γ"}
+      - {click: "Δ"}
+      - {click: "Ε"}
+      - {click: "Ζ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Η"}
+      - {click: "Θ"}
+      - {click: "Ι"}
+      - {click: "Κ"}
+      - {click: "Λ"}
+      - {click: "Μ"}
+      - {click: K_symbolsA1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ν"}
+      - {click: "Ξ"}
+      - {click: "Ο"}
+      - {click: "Π"}
+      - {click: "Ρ"}
+      - {click: "Σ"}
+      - {click: K_symbolsA2x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Τ"}
+      - {click: "Υ"}
+      - {click: "Φ"}
+      - {click: "Χ"}
+      - {click: "Ψ"}
+      - {click: "Ω"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsA2:
+    name: "希腊2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "α"}
+      - {click: "β"}
+      - {click: "γ"}
+      - {click: "δ"}
+      - {click: "ε"}
+      - {click: "ζ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "η"}
+      - {click: "θ"}
+      - {click: "ι"}
+      - {click: "κ"}
+      - {click: "λ"}
+      - {click: "μ"}
+      - {click: K_symbolsA1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ν"}
+      - {click: "ξ"}
+      - {click: "ο"}
+      - {click: "π"}
+      - {click: "ρ"}
+      - {click: "σ"}
+      - {click: K_symbolsA3x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "τ"}
+      - {click: "υ"}
+      - {click: "φ"}
+      - {click: "χ"}
+      - {click: "ψ"}
+      - {click: "ω"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsA3:
+    name: "俄文1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "А"}
+      - {click: "Б"}
+      - {click: "В"}
+      - {click: "Г"}
+      - {click: "Д"}
+      - {click: "Е"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ё"}
+      - {click: "Ж"}
+      - {click: "З"}
+      - {click: "И"}
+      - {click: "Й"}
+      - {click: "К"}
+      - {click: K_symbolsA2, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Л"}
+      - {click: "М"}
+      - {click: "Н"}
+      - {click: "О"}
+      - {click: "П"}
+      - {click: "Р"}
+      - {click: K_symbolsA4x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "С"}
+      - {click: "Т"}
+      - {click: "У"}
+      - {click: "Ф"}
+      - {click: "Х"}
+      - {click: "Ц"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsA4:
+    name: "俄文2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "Ч"}
+      - {click: "Ш"}
+      - {click: "Щ"}
+      - {click: "Ъ"}
+      - {click: "Ы"}
+      - {click: "Ь"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Э"}
+      - {click: "Ю"}
+      - {click: "Я"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbolsA3, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "а"}
+      - {click: "б"}
+      - {click: "в"}
+      - {click: "г"}
+      - {click: "д"}
+      - {click: "е"}
+      - {click: K_symbolsA5x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ё"}
+      - {click: "ж"}
+      - {click: "з"}
+      - {click: "и"}
+      - {click: "й"}
+      - {click: "к"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsA5:
+    name: "俄文3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "л"}
+      - {click: "м"}
+      - {click: "н"}
+      - {click: "о"}
+      - {click: "п"}
+      - {click: "р"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "с"}
+      - {click: "т"}
+      - {click: "у"}
+      - {click: "ф"}
+      - {click: "х"}
+      - {click: "ц"}
+      - {click: K_symbolsA4, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ч"}
+      - {click: "ш"}
+      - {click: "щ"}
+      - {click: "ъ"}
+      - {click: "ы"}
+      - {click: "ь"}
+      - {click: K_symbolsA5x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "э"}
+      - {click: "ю"}
+      - {click: "я"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsB1:
+    name: "拉丁1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "À"}
+      - {click: "Á"}
+      - {click: "Â"}
+      - {click: "Ã"}
+      - {click: "Ä"}
+      - {click: "Å"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Æ"}
+      - {click: "Ç"}
+      - {click: "È"}
+      - {click: "É"}
+      - {click: "Ê"}
+      - {click: "Ë"}
+      - {click: K_symbolsB1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ì"}
+      - {click: "Í"}
+      - {click: "Î"}
+      - {click: "Ï"}
+      - {click: "Ð"}
+      - {click: "Ñ"}
+      - {click: K_symbolsB2x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Ò"}
+      - {click: "Ó"}
+      - {click: "Ô"}
+      - {click: "Õ"}
+      - {click: "Ö"}
+      - {click: "Ø"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsB2:
+    name: "拉丁2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "Ù"}
+      - {click: "Ú"}
+      - {click: "Û"}
+      - {click: "Ü"}
+      - {click: "Ý"}
+      - {click: "Þ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "Š"}
+      - {click: "Ÿ"}
+      - {click: "Œ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbolsB1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "à"}
+      - {click: "á"}
+      - {click: "â"}
+      - {click: "ã"}
+      - {click: "ä"}
+      - {click: "å"}
+      - {click: K_symbolsB3x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "æ"}
+      - {click: "ç"}
+      - {click: "è"}
+      - {click: "é"}
+      - {click: "ê"}
+      - {click: "ë"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsB3:
+    name: "拉丁3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ì"}
+      - {click: "í"}
+      - {click: "î"}
+      - {click: "ï"}
+      - {click: "ð"}
+      - {click: "ñ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ò"}
+      - {click: "ó"}
+      - {click: "õ"}
+      - {click: "ô"}
+      - {click: "ö"}
+      - {click: "ø"}
+      - {click: K_symbolsB2, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ù"}
+      - {click: "ú"}
+      - {click: "û"}
+      - {click: "ü"}
+      - {click: "ý"}
+      - {click: "þ"}
+      - {click: K_symbolsB3x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "š"}
+      - {click: "ÿ"}
+      - {click: "œ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsC1:
+    name: "韩文1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ㅏ"}
+      - {click: "ㅑ"}
+      - {click: "ㅓ"}
+      - {click: "ㅕ"}
+      - {click: "ㅗ"}
+      - {click: "ㅛ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅜ"}
+      - {click: "ㅠ"}
+      - {click: "ㅡ"}
+      - {click: "ㅣ"}
+      - {click: "ㅐ"}
+      - {click: "ㅒ"}
+      - {click: K_symbolsC1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅔ"}
+      - {click: "ㅖ"}
+      - {click: "ㅘ"}
+      - {click: "ㅙ"}
+      - {click: "ㅚ"}
+      - {click: "ㅝ"}
+      - {click: K_symbolsC2x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅞ"}
+      - {click: "ㅟ"}
+      - {click: "ㅢ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsC2:
+    name: "韩文2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "ㄱ"}
+      - {click: "ㄴ"}
+      - {click: "ㄷ"}
+      - {click: "ㄹ"}
+      - {click: "ㅁ"}
+      - {click: "ㅂ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅅ"}
+      - {click: "ㅇ"}
+      - {click: "ㅈ"}
+      - {click: "ㅊ"}
+      - {click: "ㅋ"}
+      - {click: "ㅌ"}
+      - {click: K_symbolsC1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅍ"}
+      - {click: "ㅎ"}
+      - {click: "ㄲ"}
+      - {click: "ㄸ"}
+      - {click: "ㅚ"}
+      - {click: "ㅆ"}
+      - {click: K_symbolsC3x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ㅉ"}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsC3:
+    name: "韩文3"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "㉠"}
+      - {click: "㉡"}
+      - {click: "㉢"}
+      - {click: "㉣"}
+      - {click: "㉤"}
+      - {click: "㉥"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㉦"}
+      - {click: "㉧"}
+      - {click: "㉨"}
+      - {click: "㉩"}
+      - {click: "㉪"}
+      - {click: "㉫"}
+      - {click: K_symbolsC2, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㉬"}
+      - {click: "㉭"}
+      - {click: "㉮"}
+      - {click: "㉯"}
+      - {click: "㉰"}
+      - {click: "㉱"}
+      - {click: K_symbolsC4x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㉲"}
+      - {click: "㉳"}
+      - {click: "㉴"}
+      - {click: "㉵"}
+      - {click: "㉶"}
+      - {click: "㉷"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsC4:
+    name: "韩文4"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "㉸"}
+      - {click: "㉹"}
+      - {click: "㉺"}
+      - {click: "㉻"}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈀"}
+      - {click: "㈁"}
+      - {click: "㈂"}
+      - {click: "㈃"}
+      - {click: "㈄"}
+      - {click: "㈅"}
+      - {click: K_symbolsC3, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈆"}
+      - {click: "㈇"}
+      - {click: "㈈"}
+      - {click: "㈉"}
+      - {click: "㈊"}
+      - {click: "㈋"}
+      - {click: K_symbolsC5x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈌"}
+      - {click: "㈍"}
+      - {click: "㈎"}
+      - {click: "㈏"}
+      - {click: "㈐"}
+      - {click: "㈑"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsC5:
+    name: "韩文5"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "㈒"}
+      - {click: "㈓"}
+      - {click: "㈔"}
+      - {click: "㈕"}
+      - {click: "㈖"}
+      - {click: "㈗"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "㈘"}
+      - {click: "㈙"}
+      - {click: "㈚"}
+      - {click: "㈛"}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbolsC4, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: K_symbolsC5x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: ""}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsD1:
+    name: "音标1"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "a:"}
+      - {click: "ɔ:"}
+      - {click: "ɜː"}
+      - {click: "i:"}
+      - {click: "u:"}
+      - {click: "ʌ"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ɒ"}
+      - {click: "ə"}
+      - {click: "ɪ"}
+      - {click: "ʊ"}
+      - {click: "e"}
+      - {click: "æ"}
+      - {click: K_symbolsD1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "eɪ"}
+      - {click: "aɪ"}
+      - {click: "ɔɪ"}
+      - {click: "ɪə"}
+      - {click: "eə"}
+      - {click: "ʊə"}
+      - {click: K_symbolsD2x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "əʊ"}
+      - {click: "aʊ"}
+      - {click: "p"}
+      - {click: "t"}
+      - {click: "k"}
+      - {click: "f"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+  symbolsD2:
+    name: "音标2"
+    ascii_mode: 1
+    author: 往风
+    height: *jpgd2
+    horizontal_gap: *jpgd10
+    vertical_gap: *jpgd9
+    round_corner: *jpgd4
+    width: 13.3 # 键盘未指定键宽时默认值
+    keys:
+      - {click: "θ"}
+      - {click: "s"}
+      - {click: "b"}
+      - {click: "d"}
+      - {click: "g"}
+      - {click: "v"}
+      - {click: K_back, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "ð"}
+      - {click: "z"}
+      - {click: "ʃ"}
+      - {click: "h"}
+      - {click: "ts"}
+      - {click: "tʃ"}
+      - {click: K_symbolsD1, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "j"}
+      - {click: "tr"}
+      - {click: "ʒ"}
+      - {click: "r"}
+      - {click: "dz"}
+      - {click: "dʒ"}
+      - {click: K_symbolsD2x, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: "dr"}
+      - {click: "w"}
+      - {click: "m"}
+      - {click: "n"}
+      - {click: "ŋ"}
+      - {click: "l"}
+      - {click: BackSpace, width: 20, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols70, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols80, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols90, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsA0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsB0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsC0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbolsD0, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      - {click: K_symbols0z, width: 12.5, key_back_color: gnj, key_text_color: gnz}
+      # 虚拟第六行（抬高行）
+      - {click: IME_switch, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: "", label: '  ', height: 70, width: 60, key_back_color: bc, hilited_key_back_color: bc}
+      - {click: liquid_keyboard_clipboard, height: 70, width: 20, key_back_color: bc, hilited_key_back_color: bc, key_text_color: gnz}
+
+# 剪贴板
+liquid_keyboard:
+  # 目前只能直接写参数，不支持变量或者fallback机制。
+  # 缺少参数时，自动从style中加载参数。除非需要指定liquid_keyboard使用与主键盘不同的背景色、背景图，否则不应设置被注释掉的参数。
+  author: "tumuyan"
+  row: 6              #每屏最多显示多少行按键
+  row_land: 5         #横屏每屏最多显示多少行按键
+  key_height: 40      #按键高度
+  key_height_land: 40 #横屏模式按键高度
+  single_width: 60    #single类型的按键宽度
+  vertical_gap: 8     #纵向按键间隙
+  margin_x: 2       #左右按键间隙的1/2
+  fixed_key_bar: # 固定按键条
+    position: right  # 摆放位置（在滚动区域的……） top|bottom|left|right
+    keys: # 按键（显示名称为对应的label，不能放太多）
+      - liquid_keyboard_exit
+      - space1
+      - BackSpace
+      - Return2
+      - liquid_keyboard_clipboard
+      - liquid_keyboard_tabs
+  keyboards: [emoji, math, ascii, cn, history, clipboard, collection, draft, symbollist, list, ids, symbol, tabs, pinyin, script_symbols, jp, grease, rusa, korea, lation, yinbiao, unit, yanwenzi, combing, emoji_full, candidate]  #tab列表
+  tabs:
+    name: 更多
+    type: TABS
+  candidate:
+    name: 候选
+    type: CANDIDATE
+  history:
+    name: 常用
+    type: HISTORY
+  emoji:
+    type: SINGLE
+    keys: "🙂😂🤣😆🙃😅🥺😎👀🙈🙉🙊☹😑😄🤐😨😱🌚🌝🤔❤💔🌹💣👌👍😣😥😮🙄😏😕😯😪😫😴😌🤑😉😋😎😍😘😚😛😜😝😒😓😔😲😷🤒😇🤓🤗🤕🙁😖😞😟😤😢😭😦😧😨😩😬😰😳😵😡😠☝✌🖕👎🙏🤘👏💪💋☘🍀🌸☕🍵🍺🍻🍦🍬🍚🍜🍲🍖🎂💤"
+  emoji_full:
+    type: SINGLE
+    name: 全emoji
+    keys: "😀😃😄😁😆😅🤣😂🙂🙃🫠😉😊😇🥰😍🤩😘😗☺😚😙🥲😋😛😜🤪😝🤑🤗🤭🫢🫣🤫🤔🫡🤐🤨😐😑😶🫥😏😒🙄😬🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵🤯🤠🥳🥸😎🤓🧐😕🫤😟🙁☹😮😯😲😳🥺🥹😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾🙈🙉🙊💌💘💝💖💗💓💞💕💟❣💔❤🧡💛💚💙💜🤎🖤🤍💋💯💢💥💫💦💨🕳💬🗨🗯💭💤👋🤚🖐✋🖖🫱🫲🫳🫴👌🤌🤏✌🤞🫰🤟🤘🤙👈👉👆🖕👇☝🫵👍👎✊👊🤛🤜👏🙌🫶👐🤲🤝🙏✍💅🤳💪🦾🦿🦵🦶👂🦻👃🧠🫀🫁🦷🦴👀👁👅👄🫦👶🧒👦👧🧑👱👨🧔👩🧓👴👵🙍🙎🙅🙆💁🙋🧏🙇🤦🤷👮🕵💂🥷👷🫅🤴👸👳👲🧕🤵👰🤰🫃🫄🤱👼🎅🤶🦸🦹🧙🧚🧛🧜🧝🧞🧟🧌💆💇🚶🧍🧎🏃💃🕺🕴👯🧖🧗🤺🏇⛷🏂🏌🏄🚣🏊⛹🏋🚴🚵🤸🤼🤽🤾🤹🧘🛀🛌👭👫👬💏💑👪🗣👤👥🫂👣🏻🏼🏽🏾🏿🦰🦱🦳🦲🐵🐒🦍🦧🐶🐕🦮🐩🐺🦊🦝🐱🐈🦁🐯🐅🐆🐴🐎🦄🦓🦌🦬🐮🐂🐃🐄🐷🐖🐗🐽🐏🐑🐐🐪🐫🦙🦒🐘🦣🦏🦛🐭🐁🐀🐹🐰🐇🐿🦫🦔🦇🐻🐨🐼🦥🦦🦨🦘🦡🐾🦃🐔🐓🐣🐤🐥🐦🐧🕊🦅🦆🦢🦉🦤🪶🦩🦚🦜🐸🐊🐢🦎🐍🐲🐉🦕🦖🐳🐋🐬🦭🐟🐠🐡🦈🐙🐚🪸🐌🦋🐛🐜🐝🪲🐞🦗🪳🕷🕸🦂🦟🪰🪱🦠💐🌸💮🪷🏵🌹🥀🌺🌻🌼🌷🌱🪴🌲🌳🌴🌵🌾🌿☘🍀🍁🍂🍃🪹🪺🍄🍇🍈🍉🍊🍋🍌🍍🥭🍎🍏🍐🍑🍒🍓🫐🥝🍅🫒🥥🥑🍆🥔🥕🌽🌶🫑🥒🥬🥦🧄🧅🥜🫘🌰🍞🥐🥖🫓🥨🥯🥞🧇🧀🍖🍗🥩🥓🍔🍟🍕🌭🥪🌮🌯🫔🥙🧆🥚🍳🥘🍲🫕🥣🥗🍿🧈🧂🥫🍱🍘🍙🍚🍛🍜🍝🍠🍢🍣🍤🍥🥮🍡🥟🥠🥡🦀🦞🦐🦑🦪🍦🍧🍨🍩🍪🎂🍰🧁🥧🍫🍬🍭🍮🍯🍼🥛☕🫖🍵🍶🍾🍷🍸🍹🍺🍻🥂🥃🫗🥤🧋🧃🧉🧊🥢🍽🍴🥄🔪🫙🏺🌍🌎🌏🌐🗺🗾🧭🏔⛰🌋🗻🏕🏖🏜🏝🏞🏟🏛🏗🧱🪨🪵🛖🏘🏚🏠🏡🏢🏣🏤🏥🏦🏨🏩🏪🏫🏬🏭🏯🏰💒🗼🗽⛪🕌🛕🕍⛩🕋⛲⛺🌁🌃🏙🌄🌅🌆🌇🌉♨🎠🛝🎡🎢💈🎪🚂🚃🚄🚅🚆🚇🚈🚉🚊🚝🚞🚋🚌🚍🚎🚐🚑🚒🚓🚔🚕🚖🚗🚘🚙🛻🚚🚛🚜🏎🏍🛵🦽🦼🛺🚲🛴🛹🛼🚏🛣🛤🛢⛽🛞🚨🚥🚦🛑🚧⚓🛟⛵🛶🚤🛳⛴🛥🚢✈🛩🛫🛬🪂💺🚁🚟🚠🚡🛰🚀🛸🛎🧳⌛⏳⌚⏰⏱⏲🕰🕛🕧🕐🕜🕑🕝🕒🕞🕓🕟🕔🕠🕕🕡🕖🕢🕗🕣🕘🕤🕙🕥🕚🕦🌑🌒🌓🌔🌕🌖🌗🌘🌙🌚🌛🌜🌡☀🌝🌞🪐⭐🌟🌠🌌☁⛅⛈🌤🌥🌦🌧🌨🌩🌪🌫🌬🌀🌈🌂☂☔⛱⚡❄☃⛄☄🔥💧🌊🎃🎄🎆🎇🧨✨🎈🎉🎊🎋🎍🎎🎏🎐🎑🧧🎀🎁🎗🎟🎫🎖🏆🏅🥇🥈🥉⚽⚾🥎🏀🏐🏈🏉🎾🥏🎳🏏🏑🏒🥍🏓🏸🥊🥋🥅⛳⛸🎣🤿🎽🎿🛷🥌🎯🪀🪁🎱🔮🪄🎮🕹🎰🎲🧩🧸🪅🪩🪆♠♥♦♣♟🃏🀄🎴🔫🎭🖼🎨🧵🪡🧶🪢👓🕶🥽🥼🦺👔👕👖🧣🧤🧥🧦👗👘🥻🩱🩲🩳👙👚👛👜👝🛍🎒🩴👞👟🥾🥿👠👡🩰👢👑👒🎩🎓🧢🪖⛑📿💄💍💎🔇🔈🔉🔊📢📣📯🔔🔕🎼🎵🎶🎙🎚🎛🎤🎧📻🎷🪗🎸🎹🎺🎻🪕🥁🪘📱📲☎📞📟📠🔋🪫🔌💻🖥🖨⌨🖱🖲💽💾💿📀🧮🎥🎞📽🎬📺📷📸📹📼🔍🔎🕯💡🔦🏮🪔📔📕📖📗📘📙📚📓📒📃📜📄📰🗞📑🔖🏷💰🪙💴💵💶💷💸💳🧾💹✉📧📨📩📤📥📦📫📪📬📭📮🗳✏✒🖋🖊🖌🖍📝💼📁📂🗂📅📆🗒🗓📇📈📉📊📋📌📍📎🖇📏📐✂🗃🗄🗑🔒🔓🔏🔐🔑🗝💣🔨🪓⛏⚒🛠🗡⚔🪃🏹🛡🪚🔧🪛🔩⚙🗜⚖🦯🔗⛓🪝🧰🧲🪜⚗🧪🧫🧬🔬🔭📡💉🩸💊🩹🩼🩺🩻🚪🛗🪞🪟🛏🛋🪑🚽🪠🚿🛁🪤🪒🧴🧷🧹🧺🧻🪣🧼🫧🪥🧽🧯🛒🧿🪬🚬⚰🪦⚱🗿🪧🪪🏧🚮🚰♿🚹🚺🚻🚼🚾🛂🛃🛄🛅⚠🚸⛔🚫🚳🚭🚯🚱🚷📵🔞☢☣⬆↗➡↘⬇↙⬅↖↕↔↩↪⤴⤵🔃🔄🔙🔚🔛🔜🔝🛐⚛🕉✡☸☯✝☦☪☮🕎🔯♈♉♊♋♌♍♎♏♐♑♒♓⛎🔀🔁🔂▶⏩⏭⏯◀⏪⏮🔼⏫🔽⏬⏸⏹⏺⏏🎦🔅🔆📶📳📴♀♂⚧✖➕➖➗🟰♾‼⁉❓❔❕❗〰💱💲⚕♻⚜🔱📛🔰⭕✅☑✔❌❎➰➿〽✳✴❇©®™🔟🔠🔡🔢🔣🔤🅰🆎🅱🆑🆒🆓ℹ🆔Ⓜ🆕🆖🅾🆗🅿🆘🆙🆚🈁🈂🈷🈶🈯🉐🈹🈚🈲🉑🈸🈴🈳㊗㊙🈺🈵🔴🟠🟡🟢🔵🟣🟤⚫⚪🟥🟧🟨🟩🟦🟪🟫⬛⬜◼◻◾◽▪▫🔶🔷🔸🔹🔺🔻💠🔘🔳🔲🏁🚩🎌🏴🏳"
+  clipboard:
+    type: CLIPBOARD
+    name: 剪贴
+  collection:
+    type: COLLECTION
+    name: 收藏
+  draft:
+    type: DRAFT
+    name: 草稿
+  math:   #tab名称
+    type: SINGLE
+    name: 数学
+    keys: "≈＝≠≌<>≤≥≡()[]{}-+±×*/÷&∥%‰‱°′″∫∮∯∬∭∰∞∑∧∏∈∵∴⊥∝∨∪•√〒∝∽∈∩∧⊙⌒∥∟∣∂∆∞≌∉∪∨⊕⊿⊥∠∫∬∭"  #tab中的按键列表
+  cn:
+    type: SINGLE
+    name: 中文
+    keys:  #keys列表可以使用多种格式混合书写。
+      - ，
+      - 。
+      - ？
+      - ！
+      - ：
+      - 、
+      - “
+      - ”
+      - ‘
+      - ···
+      - ……
+      - { click: "-" }
+      - { click: "——", label: "破折" }
+      - { click: "" } # 内容为空可以强制令键盘从此处新起一行
+      - （
+      - ）
+      - 【
+      - 】
+      - 《
+      - 》
+      - ［
+      - ］
+      - ｛
+      - ｝
+      - 「
+      - 」
+      - 『
+      - 』
+      - ～
+  symbol:
+    name: 特殊
+    type: SINGLE
+    keys: "△▽○◇□☆▲▼●◆■★▷◁▶◀♻♲†⚝✡⚹✦✸✹￼�×⌫☑☒✅❎✔✘✓✗☀☼☽☾◑◐㏂㏘☭♀♂☹☻☠☜☝☞☚☟☛▪•‥…∷※♩♪♫♬§°♭♯♮‖¶№◎¤۞℗®©卍卐℡™㏇Φ⇦⇧⇨⇩⇪↖↑↗←↔→↙↓↘⇄⇅⇆⇤↩⇥▸◂▴▾◤◥◣◢㊤㊧㊥㊨㊦❏❐◲〼▢▣↶✁↷✍⏍ϟ📝✎✆☱☰☴⚿⛮⚙☲☯☵⛶☩☐☳☷☶💬🗨⟲ღ✈☂🎤🌐🔍"
+  unit:
+    name: 单位
+    type: SINGLE
+    keys: "℃¥$€฿￡㎡m³℉￥£￠₠¹²³⁴⁵ⁿ⁶⁷⁸⁹⁰ˣ⁺⁻⁼⁽⁾½⅓¼⅔¾₁₂₃₄₅ₙ₆₇₈₉₀ₓ₊₋₌₍₎℅"
+  list:
+    name: 列表
+    type: SINGLE
+    keys: "①②③④⑤⑥⑦⑧⑨⑩⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩➊➋➌➍➎➏➐➑➒➓㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ"
+  pinyin:
+    name: 拼音
+    type: SINGLE
+    keys: "āáǎàōóēéěèǒòīíǐìūúǖǘǚǜǔùêüńňㄚㄛㄜㄧㄨㄩㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ"
+  script_symbols:
+    name: 𝒶𝒜
+    type: SINGLE
+    keys: "𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵"
+  grease:
+    type: SINGLE
+    name: 希腊
+    keys: "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω"
+  rusa:
+    name: 俄语
+    type: SINGLE
+    keys: "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+  lation:
+    name: 拉丁
+    type: SINGLE
+    keys: "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞŠŸŒàáâãäåæçèéêëìíîïðñòóõôöøùúûüýþšÿœ"
+  korea:
+    type: SINGLE
+    name: "韩文"
+    keys: "dㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅘㅙㅚㅝㅞㅟㅢㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅚㅆㅉ㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐㈑㈒㈓㈔㈕㈖㈗㈘㈙㈚㈛"
+  yinbiao:
+    type: SINGLE
+    name: "音标"
+    keys: ["a:", "ɔ:", "ɜː", "i:", "u:", "ʌ", "ɒ", "ə", "ɪ", "ʊ", "e", "æ", "eɪ", "aɪ", "ɔɪ", "ɪə", "eə", "ʊə", "əʊ", "aʊ", "p", "t", "k", "f", "θ", "s", "b", "d", "g", "v", "ð", "z", "ʃ", "h", "ts", "tʃ", "j", "tr", "ʒ", "r", "dz", "dʒ", "dr", "w", "m", "n", "ŋ", "l"]
+  yanwenzi:
+    type: VAR_LENGTH
+    name: "颜文字"
+    keys: ["⎛⎝≥⏝⏝≤⎠⎞", "^_^", "^ω^", "^o^", "~\\(≧▽≦)/~", "*^_^*", "↖(^ω^)↗", "(^o^)／", "(=^▽^=)", "=^_^=", "(*^ω^*)", "٩(๑^o^๑)۶", "o(￣▽￣)o", "Y(^_^)Y", "٩( 'ω' )و", "╰(*´︶`*)╯", "*罒▽罒*", "ヾ ^_^♪", "=￣ω￣=", "︿(￣︶￣)︿", "(´▽｀)ノ♪", "乁( ˙ ω˙乁)", "✧*｡٩(ˊωˋ*)و✧*｡", "～(￣▽￣～)(～￣▽￣)～", "QwQ", "(●—●)", "(๑• . •๑)", "ヾ(≧O≦)〃嗷~", "罒ω罒", "(｡ì _ í｡)", "(๑•ี_เ•ี๑)", "ㄟ(≧◇≦)ㄏ", "(*/ω＼*)", "●▽●", "٩(๑òωó๑)۶", "✺◟(∗❛ัᴗ❛ั∗)◞✺", "( σ'ω')σ", "♡＾▽＾♡", "(๑•̀ㅂ•́)و✧", "(ง •̀_•́)ง", "(｡･ω･｡)ﾉ♡", "(☆_☆)", "(๑°3°๑)", "_(•̀ω•́ 」∠)_", "♪～(´ε｀　)", "～(^з^)-☆", "(´∀｀)♡", "ლ(´ڡ`ლ)", "(＞﹏＜)", "T_T", "⊙︿⊙", "〒▽〒", "⊙﹏⊙", "π_π", "(｡•́︿•̀｡)", "(ToT)/~~~", "╯﹏╰", "ಥ_ಥ", "(╥╯^╰╥)", "(〃′o`)", "●﹏●", "( •̥́ ˍ •̀ू )", "(つд⊂)", "心塞(´-ωก`)", "(╥﹏╥)", "┭┮﹏┭┮", "（；´д｀）ゞ", "(´;︵;`)", "(。﹏。)", "┗( T﹏T )┛", "QAQ", "ヘ(_ _ヘ)", "╰（‵□′）╯", "(*￣︿￣)", ">o<", "(-`ェ´-怒)", "ヽ(‘⌒´メ)ノ", "(*｀Ω´*)v", "(｡•ˇ‸ˇ•｡)", "(怒｀Д´怒)", "٩(๑`^´๑)۶", "(;｀O´)o", "╰_╯", "(#｀皿´)<怒怒怒!!!", "<(｀^´)>", "（｀Δ´）！", "ψ(｀∇´)ψ", "(；′⌒`)", "s(・｀ヘ´・;)ゞ", "(▼皿▼#)", "￣へ￣", "←_←", "（╯‵□′）╯︵┴─┴", "（▼へ▼メ）", "☄ฺ(◣д◢)☄ฺ", "→_→", "⊙_⊙", "d(ŐдŐ๑)", "Σ( ° △ °|||)︴", "(((φ(◎ロ◎;)φ)))", "⊙▽⊙", "(๑ŐдŐ)b", "╭(°A°`)╮", "(๑òᆺó๑)", "⊙ω⊙", "Σ(っ °Д °;)っ", " (ﾟДﾟ≡ﾟдﾟ)!?", "( *・ω・)✄╰ひ╯", "(⊙x⊙;)", "┌(。Д。)┐", "(°ー°〃)", "︽⊙_⊙︽", "!!!∑(°Д°ノ)ノ", "(๑ŐдŐ)b☆d(ŐдŐ๑)", "Σ⊙▃⊙川", "ヽ(*。>Д<)o゜", "━((*′д｀)爻(′д｀*))━!!!!", "=_=", "╮(╯_╰)╭", "（︶︿︶）", "_(:з」∠)_", "@_@", "╮(╯▽╰)╭", "(＠￣ー￣＠)", "_(:3」∠❀)_", "눈_눈", "╭(╯ε╰)╮", "(ー_ー)!!", "_(:D)∠)_", "o_O", "╭(╯^╰)╮", "(；一_一)", "´_>`", "-_-#", "┑(￣Д ￣)┍", "≡￣﹏￣≡", "○|￣|_", "-_-||", "ㄟ( ▔, ▔ )ㄏ", "( ＿ ＿)ノ｜壁", "▄█▀█●"]
+  combing:
+    type: SINGLE
+    name: "组合" #combing character
+    keys: ["⃢", "꯭", "̣", "̲"  ]
+  ascii:
+    type: SINGLE
+    name: 英文
+    keys: ",.?!:;/\\|*-+=^$`'\"^~@#%&()[]{}_"
+  ids:
+    type: SINGLE
+    name: IDS
+    keys: "⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻↷↔"
+  jp:
+    type: SINGLE
+    name: 假名
+    keys: "あいうえおかがきぎくぐけげこごさざしじすずせぜそぞただちぢつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろわをんアィイウェエオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロワヲン"
+  symbollist:
+    type: SYMBOL
+    name: 符号表
+    keys: [ 符号: '/fh', 电脑: '/dn', 象棋: '/xq', 麻将: '/mj', 骰子: '/sz', 扑克: '/pk', 天气: '/tq', 音乐: '/yy', 八卦: '/bg', 易经: '/lssg', 天体: '/tt',  星座: '/xz',  星号: '/xh',  方块: '/fk',  几何: '/jh',  箭头: '/jt',  数学: '/sx',  上标: '/sb',  下标: '/xb',  单位: '/dw',  货币: '/hb',  拼音: '/py',  注音: '/zy',  假名: '/jm',  片假: '/pjm',  韩文: '/hw',  希腊: '/xl',  希大: '/xld', 罗马:   '/lm',  罗大:   '/lmd', 俄语:   '/ey',  俄大:   '/eyd', 表情:  '/bq',  一: '/1',  二: '/2',  三: '/3',  四: '/4',  五: '/5',  六: '/6',  七: '/7',  八: '/8',  九: '/9',  零: '/0',  十: '/10',  分数: '/fs',  标点: '/bd',  偏旁: '/pp',  竖标:  '/bdz'  ]
+
+
+preset_keys:
+  Shift: {label: "↑", send: Shift_L}
+  number: {label: 123, send: Eisu_toggle, select: number}
+  english: {label: "abc", send: Eisu_toggle, select: english}
+  english2: {label: "En", send: Eisu_toggle, select: english2}
+  symbols: {label: "符", send: Eisu_toggle, select: symbols}
+  .symbols: {label: "更多", send: Eisu_toggle, select: .symbols} #默认的符号键盘
+  .number: {label: 123, send: Eisu_toggle, select: .number} #默认的9宫格数据键盘
+  DefaultKeyboard: {label: 五笔, send: Eisu_toggle, select: default}
+  DefaultKeyboard2: {label: 中, send: Eisu_toggle, select: default}
+
+  # 编辑
+  Return: {label: Enter, preview: '↩', send: Return}
+  Return1: {label: Enter, preview: '↩', send: Return}
+  BackSpace: {label: ⌫, preview: '⌫', repeatable: true, send: BackSpace}
+  space: {repeatable: false, preview: '␣', functional: false, send: space}
+  Cixuan: {label: 次选, send: 2}
+
+  # 剪贴板
+  liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"}  #退出liquidkeyboard
+  space1: {repeatable: false, label: '空格', functional: false, send: space}
+  BackSpace: {label: 退格, preview: '⇦', repeatable: true, functional: false, send: BackSpace}
+  Return2: {label: 回车, send: Return }
+  liquid_keyboard_switch: { label: 更多, send: function, command: liquid_keyboard, option: "特殊" }
+  liquid_keyboard_switch2: { toggle: _liquid_keyboard, send: Mode_switch, states: [ 更多, 更多 ] }
+  liquid_keyboard_tabs: { label: 更多, send: function, command: liquid_keyboard, option: "更多" }
+  liquid_keyboard_emoji: { label: 🙂, send: function, command: liquid_keyboard, option: "emoji" }
+  liquid_keyboard_clipboard: { label: ⏍, send: function, command: liquid_keyboard, option: "剪贴" }
+
+  # 虚拟行第6行设置
+  IME_switch: {label: '⌨', functional: false, send: LANGUAGE_SWITCH}
+
+  # 快捷键
+  fanjian: {label: "繁简", functional: false, text: "{Control+Shift+F}"} #繁简切换
+  chaoji: {label: "超集", functional: false, text: "{Control+Shift+U}"} #超集切换
+  chaifen: {label: "拆分", functional: false, text: "{Control+Shift+H}"} #显示拆分
+  zhujie: {label: "注解", functional: false, text: "{Control+Shift+J}"} #注解切换
+  emoji: {label: "表情", functional: false, text: "{Control+Shift+M}"} #EMOJI切换
+  select_all: {label: ☑, functional: false, send: Control+a}
+  cut: {label: ✁, functional: false, send: Control+x}
+  copy: {label: ❐, functional: false, send: Control+c}
+  paste: {label: ▣, functional: false, send: Control+v}
+  ClearH: {label: "删段首", functional: false, text: "{Control+Shift+Home}{Delete}"} #光标到首行
+  
+  # trime设置
+  K_back: {label: "返回", send: Eisu_toggle, select: default}
+  K_symbols123: {label: "ϟ12", send: Eisu_toggle, select: symbols01}
+  K_symbols0z: {label: "<", send: Eisu_toggle, select: symbols01}
+  K_symbols0y: {label: ">", send: Eisu_toggle, select: symbols71}
+  K_symbols00: {label: "数字", send: Eisu_toggle, select: symbols01}
+  K_symbols01: {label: "▲", send: Eisu_toggle, select: symbols01}
+  K_symbols0g: {label: "功能", send: Eisu_toggle, select: symbols02}
+  K_symbols0x: {label: "‹ɪ›", send: Eisu_toggle, select: symbols02}
+  K_symbols02: {label: "▲", send: Eisu_toggle, select: symbols02}
+  K_symbols02x: {label: "▼", send: Eisu_toggle, select: symbols02}
+  K_symbols10: {label: "英文", send: Eisu_toggle, select: symbols11}
+  K_symbols11: {label: "▲", send: Eisu_toggle, select: symbols11}
+  K_symbols12: {label: "▲", send: Eisu_toggle, select: symbols12}
+  K_symbols12x: {label: "▼", send: Eisu_toggle, select: symbols12}
+  K_symbols13: {label: "▲", send: Eisu_toggle, select: symbols13}
+  K_symbols13x: {label: "▼", send: Eisu_toggle, select: symbols13}
+  K_symbols14: {label: "▲", send: Eisu_toggle, select: symbols14}
+  K_symbols14x: {label: "▼", send: Eisu_toggle, select: symbols14}
+  K_symbols20: {label: "中文", send: Eisu_toggle, select: symbols21}
+  K_symbols21: {label: "▲", send: Eisu_toggle, select: symbols21}
+  K_symbols22: {label: "▲", send: Eisu_toggle, select: symbols22}
+  K_symbols22x: {label: "▼", send: Eisu_toggle, select: symbols22}
+  K_symbols30: {label: "^_^", send: Eisu_toggle, select: symbols31}
+  K_symbols31: {label: "▲", send: Eisu_toggle, select: symbols31}
+  K_symbols32: {label: "▲", send: Eisu_toggle, select: symbols32}
+  K_symbols32x: {label: "▼", send: Eisu_toggle, select: symbols32}
+  K_symbols33: {label: "▲", send: Eisu_toggle, select: symbols33}
+  K_symbols33x: {label: "▼", send: Eisu_toggle, select: symbols33}
+  K_symbols34: {label: "▲", send: Eisu_toggle, select: symbols34}
+  K_symbols34x: {label: "▼", send: Eisu_toggle, select: symbols34}
+  K_symbols35: {label: "▲", send: Eisu_toggle, select: symbols35}
+  K_symbols35x: {label: "▼", send: Eisu_toggle, select: symbols35}
+  K_symbols36: {label: "▲", send: Eisu_toggle, select: symbols36}
+  K_symbols36x: {label: "▼", send: Eisu_toggle, select: symbols36}
+  K_symbols40: {label: "😊", send: Eisu_toggle, select: symbols41}
+  K_symbols41: {label: "▲", send: Eisu_toggle, select: symbols41}
+  K_symbols42: {label: "▲", send: Eisu_toggle, select: symbols42}
+  K_symbols42x: {label: "▼", send: Eisu_toggle, select: symbols42}
+  K_symbols43: {label: "▲", send: Eisu_toggle, select: symbols43}
+  K_symbols43x: {label: "▼", send: Eisu_toggle, select: symbols43}
+  K_symbols44: {label: "▲", send: Eisu_toggle, select: symbols44}
+  K_symbols44x: {label: "▼", send: Eisu_toggle, select: symbols44}
+  K_symbols50: {label: "特殊", send: Eisu_toggle, select: symbols51}
+  K_symbols51: {label: "▲", send: Eisu_toggle, select: symbols51}
+  K_symbols52: {label: "▲", send: Eisu_toggle, select: symbols52}
+  K_symbols52x: {label: "▼", send: Eisu_toggle, select: symbols52}
+  K_symbols53: {label: "▲", send: Eisu_toggle, select: symbols53}
+  K_symbols53x: {label: "▼", send: Eisu_toggle, select: symbols53}
+  K_symbols54: {label: "▲", send: Eisu_toggle, select: symbols54}
+  K_symbols54x: {label: "▼", send: Eisu_toggle, select: symbols54}
+  K_symbols55: {label: "▲", send: Eisu_toggle, select: symbols55}
+  K_symbols55x: {label: "▼", send: Eisu_toggle, select: symbols55}
+  K_symbols56: {label: "▲", send: Eisu_toggle, select: symbols56}
+  K_symbols56x: {label: "▼", send: Eisu_toggle, select: symbols56}
+  K_symbols60: {label: "数学", send: Eisu_toggle, select: symbols61}
+  K_symbols61: {label: "▲", send: Eisu_toggle, select: symbols61}
+  K_symbols62: {label: "▲", send: Eisu_toggle, select: symbols62}
+  K_symbols62x: {label: "▼", send: Eisu_toggle, select: symbols62}
+  K_symbols63: {label: "▲", send: Eisu_toggle, select: symbols63}
+  K_symbols63x: {label: "▼", send: Eisu_toggle, select: symbols63}
+  K_symbols64: {label: "▲", send: Eisu_toggle, select: symbols64}
+  K_symbols64x: {label: "▼", send: Eisu_toggle, select: symbols64}
+  K_symbols65: {label: "▲", send: Eisu_toggle, select: symbols65}
+  K_symbols65x: {label: "▼", send: Eisu_toggle, select: symbols65}
+  K_symbols70: {label: "序号", send: Eisu_toggle, select: symbols71}
+  K_symbols71: {label: "▲", send: Eisu_toggle, select: symbols71}
+  K_symbols72: {label: "▲", send: Eisu_toggle, select: symbols72}
+  K_symbols72x: {label: "▼", send: Eisu_toggle, select: symbols72}
+  K_symbols73: {label: "▲", send: Eisu_toggle, select: symbols73}
+  K_symbols73x: {label: "▼", send: Eisu_toggle, select: symbols73}
+  K_symbols74: {label: "▲", send: Eisu_toggle, select: symbols74}
+  K_symbols74x: {label: "▼", send: Eisu_toggle, select: symbols74}
+  K_symbols75: {label: "▲", send: Eisu_toggle, select: symbols75}
+  K_symbols75x: {label: "▼", send: Eisu_toggle, select: symbols75}
+  K_symbols80: {label: "制表", send: Eisu_toggle, select: symbols81}
+  K_symbols81: {label: "▲", send: Eisu_toggle, select: symbols81}
+  K_symbols82: {label: "▲", send: Eisu_toggle, select: symbols82}
+  K_symbols82x: {label: "▼", send: Eisu_toggle, select: symbols82}
+  K_symbols83: {label: "▲", send: Eisu_toggle, select: symbols83}
+  K_symbols83x: {label: "▼", send: Eisu_toggle, select: symbols83}
+  K_symbols90: {label: "注音", send: Eisu_toggle, select: symbols91}
+  K_symbols91: {label: "▲", send: Eisu_toggle, select: symbols91}
+  K_symbols92: {label: "▲", send: Eisu_toggle, select: symbols92}
+  K_symbols92x: {label: "▼", send: Eisu_toggle, select: symbols92}
+  K_symbols93: {label: "▲", send: Eisu_toggle, select: symbols93}
+  K_symbols93x: {label: "▼", send: Eisu_toggle, select: symbols93}
+  K_symbolsA0: {label: "希俄", send: Eisu_toggle, select: symbolsA1}
+  K_symbolsA1: {label: "▲", send: Eisu_toggle, select: symbolsA1}
+  K_symbolsA2: {label: "▲", send: Eisu_toggle, select: symbolsA2}
+  K_symbolsA2x: {label: "▼", send: Eisu_toggle, select: symbolsA2}
+  K_symbolsA3: {label: "▲", send: Eisu_toggle, select: symbolsA3}
+  K_symbolsA3x: {label: "▼", send: Eisu_toggle, select: symbolsA3}
+  K_symbolsA4: {label: "▲", send: Eisu_toggle, select: symbolsA4}
+  K_symbolsA4x: {label: "▼", send: Eisu_toggle, select: symbolsA4}
+  K_symbolsA5: {label: "▲", send: Eisu_toggle, select: symbolsA5}
+  K_symbolsA5x: {label: "▼", send: Eisu_toggle, select: symbolsA5}
+  K_symbolsB0: {label: "拉丁", send: Eisu_toggle, select: symbolsB1}
+  K_symbolsB1: {label: "▲", send: Eisu_toggle, select: symbolsB1}
+  K_symbolsB2: {label: "▲", send: Eisu_toggle, select: symbolsB2}
+  K_symbolsB2x: {label: "▼", send: Eisu_toggle, select: symbolsB2}
+  K_symbolsB3: {label: "▲", send: Eisu_toggle, select: symbolsB3}
+  K_symbolsB3x: {label: "▼", send: Eisu_toggle, select: symbolsB3}
+  K_symbolsC0: {label: "韩文", send: Eisu_toggle, select: symbolsC1}
+  K_symbolsC1: {label: "▲", send: Eisu_toggle, select: symbolsC1}
+  K_symbolsC2: {label: "▲", send: Eisu_toggle, select: symbolsC2}
+  K_symbolsC2x: {label: "▼", send: Eisu_toggle, select: symbolsC2}
+  K_symbolsC3: {label: "▲", send: Eisu_toggle, select: symbolsC3}
+  K_symbolsC3x: {label: "▼", send: Eisu_toggle, select: symbolsC3}
+  K_symbolsC4: {label: "▲", send: Eisu_toggle, select: symbolsC4}
+  K_symbolsC4x: {label: "▼", send: Eisu_toggle, select: symbolsC4}
+  K_symbolsC5: {label: "▲", send: Eisu_toggle, select: symbolsC5}
+  K_symbolsC5x: {label: "▼", send: Eisu_toggle, select: symbolsC5}
+  K_symbolsD0: {label: "音标", send: Eisu_toggle, select: symbolsD1}
+  K_symbolsD1: {label: "▲", send: Eisu_toggle, select: symbolsD1}
+  K_symbolsD2: {label: "▲", send: Eisu_toggle, select: symbolsD2}
+  K_symbolsD2x: {label: "▼", send: Eisu_toggle, select: symbolsD2}
