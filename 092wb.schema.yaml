@@ -72,7 +72,6 @@ engine:
     - lua_translator@lunar                  # 农历
     - lua_translator@unicode                # Unicode
     - lua_translator@number_translator      # 数字、金额大写
-    - lua_translator@force_gc               # 暴力 GC
 speller:
   auto_select: true               # 自动上屏
   auto_clear: max_length          # 最大码长清屏
