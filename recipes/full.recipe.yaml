@@ -12,7 +12,7 @@ install_files: >-
   092wb_key_bindings.yaml
   core.dict.yaml
   core.schema.yaml
-  default.yaml
+  default.*
   punctuation.yaml
   py.dict.yaml
   py.schema.yaml
